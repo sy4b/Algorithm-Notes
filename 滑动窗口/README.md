@@ -21,3 +21,9 @@
 [题目链接](https://leetcode-cn.com/problems/minimum-window-substring/description/)
 
 [代码](https://github.com/sy4b/Algorithm-Notes/blob/main/Storage/Code/76.最小覆盖子串.cpp)
+
+### Leetcode 567. 字符串的排列
+
+### Leetcode 438. 找到字符串中所有字母异位词
+
+### Leetocde 3. 无重复字符的最长子串
