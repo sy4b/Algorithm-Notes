@@ -9,6 +9,6 @@
 
 [786. 第 K 个最小的素数分数](https://leetcode-cn.com/problems/k-th-smallest-prime-fraction/)
 
-[代码]()
+[代码](https://github.com/sy4b/Algorithm-Notes/blob/main/Storage/Code/786.第-k-个最小的素数分数.cpp)
 
 [视频讲解]()
