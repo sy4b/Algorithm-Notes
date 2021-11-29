@@ -3,21 +3,35 @@
  *
  * [3] 无重复字符的最长子串
  */
+/*
+    滑动窗口
+    1. 移动右边界：窗口内没有重复字符
+    2. 移动左边界：窗口内字符重复了，要去掉一些
+*/
 
 // @lc code=start
 class Solution {
+    // 检测窗口内是否没有重复
+    bool helper(unordered_map<char,int>& mp){
+        for(auto& p: mp){
+            if(p.second>1){
+                return false;
+            }
+        }
+        return true;
+    }
 public:
     int lengthOfLongestSubstring(string s) {
-        int len=s.size();
-        int left=0, right=0, ans=0;
-        unordered_set<char> st;
-        while(right<len){
-            while(st.count(s[right])>0){
-                st.erase(s[left]);
+        unordered_map<char, int> mp;
+        int right=0, left=0, ans=0;
+        while(right<s.size()){
+            ++mp[s[right]];
+            // 窗口内重复时，移动左边界缩小窗口
+            while(!helper(mp)){
+                --mp[s[left]];
                 ++left;
             }
-            st.insert(s[right]);
-            ans=max(ans, right-left+1);
+            ans=max(ans,right-left+1);
             ++right;
         }
         return ans;
