@@ -11,4 +11,4 @@
 
 [代码](https://github.com/sy4b/Algorithm-Notes/blob/main/Storage/Code/786.第-k-个最小的素数分数.cpp)
 
-[视频讲解]()
+[视频讲解](https://www.bilibili.com/video/BV1JP4y137gU/)
