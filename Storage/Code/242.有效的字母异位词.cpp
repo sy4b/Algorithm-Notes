@@ -5,19 +5,26 @@
  */
 
 // @lc code=start
+/*
+    出现unicode字符，使用unordered_map替换vector
+*/
 class Solution {
 public:
     bool isAnagram(string s, string t) {
-        if(s.size()!=t.size())  return false;
-        vector<int> vec(26,0);
-        for(auto &c: s){
-            ++vec[c-'a'];
+        int slen=s.size(), tlen=t.size();
+        // 长度不等直接判否
+        if(slen!=tlen){
+            return false;
         }
-        for(auto &c: t){
-            if(vec[c-'a']==0){
+        vector<int> svec(26, 0), tvec(26, 0);
+        for(int i=0;i<slen;++i){
+            ++svec[s[i]-'a'];
+            ++tvec[t[i]-'a'];
+        }
+        for(int i=0;i<26;++i){
+            if(svec[i]!=tvec[i]){
                 return false;
             }
-            --vec[c-'a'];
         }
         return true;
     }
